@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import UserSelectCard from "./UserSelectCard";
 import Chip from "./Chip";
 import SelectOption from "./SelectOption";
+import { useMediaQuery } from "react-responsive";
 
 interface IUserSelectorProps {
   usersList: IUser[];
@@ -15,6 +16,8 @@ export default function UserSelector({
   selectedUsers,
   onChange,
 }: IUserSelectorProps) {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);
   const [query, setQuery] = useState<string>("");
   const [highlightLastUser, setHighlightLastUser] = useState<boolean>(false);
@@ -117,7 +120,9 @@ export default function UserSelector({
 
   return (
     <div
-      className="flex flex-wrap items-center py-1 min-h-fit max-w-[60%] border-b-2 border-black bg-white bg-opacity-10"
+      className={`flex flex-wrap items-center py-1 min-h-fit ${
+        isMobile ? "w-full" : "max-w-[60%]"
+      } border-b-2 border-black bg-white bg-opacity-10`}
       ref={selectRef}
     >
       {selectedUsers.map((user, id) => (
