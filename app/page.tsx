@@ -1,5 +1,5 @@
 "use client";
-import UserSelector from "@/Components/UserSelector";
+import UserSelector from "@/components/UserSelector";
 import { users } from "@/mock";
 import { IUser } from "@/types";
 import { useState } from "react";
