@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main
       className={`flex min-h-screen w-full overflow-scroll flex-col items-center ${
-        isMobile ? "p-24" : "p-8"
+        isMobile ? "p-8" : "p-20"
       } text-[13px]`}
     >
       <div className="text-center">
