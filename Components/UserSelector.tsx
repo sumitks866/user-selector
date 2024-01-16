@@ -60,7 +60,7 @@ export default function UserSelector({
     [query, selectedUsers]
   ); // get new user list when query changes
 
-  const handleInputKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+  const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     //if user presses backspace and query is empty
     if (e.key === "Backspace" && query === "") {
       backspaceCountRef.current += 1;
